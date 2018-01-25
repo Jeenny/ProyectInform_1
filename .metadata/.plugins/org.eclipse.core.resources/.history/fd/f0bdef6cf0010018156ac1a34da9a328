@@ -95,9 +95,8 @@ public class VentanaLogin extends JFrame {
 		contentPane_1.add(lblUsuario);
 		
 		textField = new JTextField();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, textField, -5, SpringLayout.NORTH, lblUsuario);
-		sl_contentPane.putConstraint(SpringLayout.WEST, textField, 55, SpringLayout.EAST, lblUsuario);
-		sl_contentPane.putConstraint(SpringLayout.EAST, textField, -99, SpringLayout.EAST, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, textField, -3, SpringLayout.NORTH, lblUsuario);
+		sl_contentPane.putConstraint(SpringLayout.EAST, textField, -130, SpringLayout.EAST, contentPane_1);
 		contentPane_1.add(textField);
 		textField.setColumns(10);
 		
@@ -109,9 +108,10 @@ public class VentanaLogin extends JFrame {
 		contentPane_1.add(lblContrasea);
 		
 		JButton btnAceptar = new JButton("Entrar");
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnAceptar, 174, SpringLayout.WEST, contentPane_1);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnAceptar, -10, SpringLayout.SOUTH, contentPane_1);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnAceptar, -172, SpringLayout.EAST, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnAceptar, 168, SpringLayout.WEST, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnAceptar, -32, SpringLayout.SOUTH, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnAceptar, -178, SpringLayout.EAST, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.WEST, textField, 0, SpringLayout.WEST, btnAceptar);
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -119,10 +119,10 @@ public class VentanaLogin extends JFrame {
 		contentPane_1.add(btnAceptar);
 		
 		passwordField = new JPasswordField();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnAceptar, 25, SpringLayout.SOUTH, passwordField);
-		sl_contentPane.putConstraint(SpringLayout.WEST, passwordField, 105, SpringLayout.WEST, lblContrasea);
-		sl_contentPane.putConstraint(SpringLayout.EAST, passwordField, -99, SpringLayout.EAST, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnAceptar, 23, SpringLayout.SOUTH, passwordField);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, passwordField, -106, SpringLayout.SOUTH, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.EAST, passwordField, 0, SpringLayout.EAST, textField);
+		sl_contentPane.putConstraint(SpringLayout.WEST, passwordField, 7, SpringLayout.EAST, lblContrasea);
 		contentPane_1.add(passwordField);
 
 	}
