@@ -65,7 +65,7 @@ public class VentanaLogin extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(195, 211, 236));
 
-		setBounds(360, 200, 500, 350);
+		setBounds(380, 200, 500, 400);
 		
 		contentPane_1 = new JPanel() {
 			 @Override
