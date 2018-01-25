@@ -1,0 +1,90 @@
+package View;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.SpringLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class VentanaLogin extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaLogin frame = new VentanaLogin();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaLogin() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(250, 200, 530, 370);
+		setResizable(false);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(195, 211, 236));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		SpringLayout sl_contentPane = new SpringLayout();
+		contentPane.setLayout(sl_contentPane);
+		
+		JLabel lblUsuario = new JLabel("Usuario");
+		sl_contentPane.putConstraint(SpringLayout.WEST, lblUsuario, 96, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, lblUsuario, -163, SpringLayout.SOUTH, contentPane);
+		contentPane.add(lblUsuario);
+		
+		textField = new JTextField();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, textField, 1, SpringLayout.NORTH, lblUsuario);
+		sl_contentPane.putConstraint(SpringLayout.WEST, textField, 64, SpringLayout.EAST, lblUsuario);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, textField, -153, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, textField, -102, SpringLayout.EAST, contentPane);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblContrasea = new JLabel("Contraseña");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, lblContrasea, 37, SpringLayout.SOUTH, lblUsuario);
+		sl_contentPane.putConstraint(SpringLayout.WEST, lblContrasea, 0, SpringLayout.WEST, lblUsuario);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, lblContrasea, -111, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, lblContrasea, -273, SpringLayout.EAST, contentPane);
+		contentPane.add(lblContrasea);
+		
+		passwordField = new JPasswordField();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, passwordField, -6, SpringLayout.NORTH, lblContrasea);
+		sl_contentPane.putConstraint(SpringLayout.WEST, passwordField, 41, SpringLayout.EAST, lblContrasea);
+		sl_contentPane.putConstraint(SpringLayout.EAST, passwordField, 0, SpringLayout.EAST, textField);
+		contentPane.add(passwordField);
+		
+		JButton btnAceptar = new JButton("Entrar");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnAceptar, 24, SpringLayout.SOUTH, passwordField);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnAceptar, 167, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnAceptar, -43, SpringLayout.SOUTH, contentPane);
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnAceptar);
+	}
+}
