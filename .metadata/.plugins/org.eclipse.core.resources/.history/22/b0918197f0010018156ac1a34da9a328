@@ -120,7 +120,7 @@ public class VentanaLogin extends JFrame {
 		
 		passwordField = new JPasswordField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, btnAceptar, 25, SpringLayout.SOUTH, passwordField);
-		sl_contentPane.putConstraint(SpringLayout.WEST, passwordField, 103, SpringLayout.WEST, lblContrasea);
+		sl_contentPane.putConstraint(SpringLayout.WEST, passwordField, 55, SpringLayout.EAST, lblContrasea);
 		sl_contentPane.putConstraint(SpringLayout.EAST, passwordField, -99, SpringLayout.EAST, contentPane_1);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, passwordField, -106, SpringLayout.SOUTH, contentPane_1);
 		contentPane_1.add(passwordField);
