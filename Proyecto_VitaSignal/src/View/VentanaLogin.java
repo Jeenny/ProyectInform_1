@@ -16,6 +16,7 @@ import javax.swing.SpringLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -124,6 +125,14 @@ public class VentanaLogin extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.EAST, passwordField, -99, SpringLayout.EAST, contentPane_1);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, passwordField, -106, SpringLayout.SOUTH, contentPane_1);
 		contentPane_1.add(passwordField);
+		
+		JPanel panelLogo = new JPanel();
+		
+		sl_contentPane.putConstraint(SpringLayout.NORTH, panelLogo, 21, SpringLayout.NORTH, contentPane_1);
+		sl_contentPane.putConstraint(SpringLayout.WEST, panelLogo, 0, SpringLayout.WEST, btnAceptar);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, panelLogo, -18, SpringLayout.NORTH, textField);
+		sl_contentPane.putConstraint(SpringLayout.EAST, panelLogo, -158, SpringLayout.EAST, contentPane_1);
+		contentPane_1.add(panelLogo);
 
 	}
 }
