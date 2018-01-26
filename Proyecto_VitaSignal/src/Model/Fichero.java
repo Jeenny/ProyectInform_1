@@ -5,10 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 /**
- * 
+ * Clase para el tratamiento de los ficheros
+ * @author Miguel Chacon Carrasco
+ * @version 0.5
  */
-
 public class Fichero {
+
 	private String nombreFichero;
 	/**
 	 * Constructor de la clase fichero
@@ -25,10 +27,6 @@ public class Fichero {
 	 * @return comparacion es falso si no encuentra una coincidencia simultanea en usuario y contraseña
 	 */
 public boolean comprobarUsuario(String Usuario, String Password) throws FileNotFoundException, IOException{
-	/*
-	 * 
-	 */
-	
 	 boolean comparacion=false;
 	 File ficheroUsuario = new File(nombreFichero+".txt");
 	 String linea;
@@ -45,11 +43,11 @@ public boolean comprobarUsuario(String Usuario, String Password) throws FileNotF
 	 }
 	 
 	 }catch(FileNotFoundException r){
-		 System.out.println("Se ha producido el siguiente error de lectura: "+r);
+		 System.out.println("Se ha producido el siguiente error de lectura: "+r);//Si hay un error de lectura salta este mensaje
 	 
 	 
 	 }catch(IOException e){
-		 System.out.println("Se ha producido el siguiente error desconocido: "+e);
+		 System.out.println("Se ha producido el siguiente error desconocido: "+e);//Si hay un error de origen desconocido salta este mensaje
 	 }
 	
 	return comparacion;
@@ -57,9 +55,9 @@ public boolean comprobarUsuario(String Usuario, String Password) throws FileNotF
 /**
  * Funcion que introduciendo su usuario te da como resultado que tipo de usuario es (medico, tecnico o administrador)
  * @param usuario es el nombre del usuario
- * @return
+ * @return tipousuario es el tipo de usuario es para el nombre introducido. Si no existe debuelve ""
  */
-public String tipoUsuario (String usuario){
+public String tipoUsuario (String usuario) throws FileNotFoundException, IOException{
 	String tipousuario="";
 	boolean busqueda=true;
 	 File ficheroUsuario = new File(nombreFichero+".txt");
@@ -71,6 +69,7 @@ public String tipoUsuario (String usuario){
 			if(lineatxt[0].equals(usuario)){
 				tipousuario=lineatxt[2];
 			}
+			lector.close();
 	 }
 	 }catch(FileNotFoundException r){
 		 System.out.println("Se ha producido el siguiente error de lectura: "+r);
