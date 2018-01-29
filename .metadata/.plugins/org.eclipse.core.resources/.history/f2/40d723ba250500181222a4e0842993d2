@@ -28,7 +28,7 @@ public class main {
 		try {
 			fr = new FileReader(f);
 			Scanner scanner;
-			scanner = new Scanner(fr).useDelimiter(";|\r\n|\n");
+			scanner = new Scanner(fr).useDelimiter(";|\r\n");
 			
 			
 			while (scanner.hasNext()) {
@@ -69,7 +69,7 @@ public class main {
 					frame.setLocationRelativeTo(null);
 					
 					VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
-					VPMedico.setVisible(true);
+					VPMedico.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

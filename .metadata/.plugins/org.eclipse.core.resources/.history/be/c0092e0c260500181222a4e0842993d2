@@ -28,7 +28,7 @@ public class main {
 		try {
 			fr = new FileReader(f);
 			Scanner scanner;
-			scanner = new Scanner(fr).useDelimiter(";|\r\n|\n");
+			scanner = new Scanner(fr).useDelimiter(";"+System.lineSeparator());
 			
 			
 			while (scanner.hasNext()) {

@@ -28,7 +28,7 @@ public class main {
 		try {
 			fr = new FileReader(f);
 			Scanner scanner;
-			scanner = new Scanner(fr).useDelimiter(";|\r\n|\n");
+			scanner = new Scanner(fr).useDelimiter(";|\r\n");
 			
 			
 			while (scanner.hasNext()) {
@@ -65,7 +65,7 @@ public class main {
 				try {
 					VentanaLogin frame = new VentanaLogin(clLog);
 					clLog.setV1(frame);
-					frame.setVisible(true);
+					frame.setVisible(false);
 					frame.setLocationRelativeTo(null);
 					
 					VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
