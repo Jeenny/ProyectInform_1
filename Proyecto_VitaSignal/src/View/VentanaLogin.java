@@ -2,33 +2,44 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Control.ControladorLogin;
+
 import javax.swing.SpringLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JPasswordField;
+import java.awt.Toolkit;
 
 
 public class VentanaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel contentPane_1;
+	private ControladorLogin cntrl;
 
 	private JTextField textField;
 	private JPasswordField passwordField;
@@ -39,32 +50,26 @@ public class VentanaLogin extends JFrame {
 
 
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaLogin frame = new VentanaLogin();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
-	public VentanaLogin() {
+	public VentanaLogin() throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBounds(415, 190, 530, 370);
 		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(195, 211, 236));
+		cntrl= new ControladorLogin(this);
+		
+		BufferedImage logo =ImageIO.read(new File("src/Images/VitaSignalAzul2.png"));
+		
+	
+		
+		
+		
 
 		setBounds(360, 200, 500, 350);
 		
@@ -113,10 +118,8 @@ public class VentanaLogin extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.WEST, btnAceptar, 174, SpringLayout.WEST, contentPane_1);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnAceptar, -10, SpringLayout.SOUTH, contentPane_1);
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnAceptar, -172, SpringLayout.EAST, contentPane_1);
-		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnAceptar.addActionListener(cntrl);
+		
 		contentPane_1.add(btnAceptar);
 		
 		passwordField = new JPasswordField();
@@ -126,13 +129,21 @@ public class VentanaLogin extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, passwordField, -106, SpringLayout.SOUTH, contentPane_1);
 		contentPane_1.add(passwordField);
 		
-		JPanel panelLogo = new JPanel();
 		
-		sl_contentPane.putConstraint(SpringLayout.NORTH, panelLogo, 21, SpringLayout.NORTH, contentPane_1);
-		sl_contentPane.putConstraint(SpringLayout.WEST, panelLogo, 0, SpringLayout.WEST, btnAceptar);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, panelLogo, -18, SpringLayout.NORTH, textField);
-		sl_contentPane.putConstraint(SpringLayout.EAST, panelLogo, -158, SpringLayout.EAST, contentPane_1);
-		contentPane_1.add(panelLogo);
+		
+		JLabel imgLogo = new JLabel(new ImageIcon(logo));
+		
+	
+		sl_contentPane.putConstraint(SpringLayout.NORTH, imgLogo, -124, SpringLayout.NORTH, textField);
+		sl_contentPane.putConstraint(SpringLayout.WEST, imgLogo, -39, SpringLayout.WEST, btnAceptar);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, imgLogo, -6, SpringLayout.NORTH, textField);
+		sl_contentPane.putConstraint(SpringLayout.EAST, imgLogo, -127, SpringLayout.EAST, contentPane_1);
+		
+		
+		
+		contentPane_1.add(imgLogo);
+		
+		
 
 	}
 }
