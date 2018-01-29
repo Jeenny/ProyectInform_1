@@ -39,6 +39,7 @@ public class main {
 					VentanaLogin frame = new VentanaLogin(clLog);
 					clLog.setV1(frame);
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
