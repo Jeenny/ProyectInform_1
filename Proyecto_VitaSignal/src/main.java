@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import Control.ControladorLogin;
 import Model.Usuario;
@@ -17,20 +19,44 @@ public class main {
 		File f =new File("src/Usuarios/users.txt");
 		FileReader fr;
 		BufferedReader br;
-		Usuario u1 = new Usuario();
+		
+		
+		ArrayList<Usuario> users = new ArrayList<Usuario>();
+		
+		
 		try {
 			fr = new FileReader(f);
-			br= new BufferedReader(fr);
+			Scanner scanner;
+			scanner = new Scanner(fr).useDelimiter(";|\r\n");
 			
 			
-			u1.setUsuario(br.readLine());
-			u1.setPassword(br.readLine());
+			while (scanner.hasNext()) {
+				Usuario u1 = new Usuario();
+				
+			    u1.setUsuario(scanner.next());
+			    System.out.println("U"+u1.getUsuario());
+			    
+			    u1.setPassword(scanner.next());
+			    System.out.println("P"+u1.getPassword());
+			    u1.setTipo(scanner.next());
+			    System.out.println("T"+u1.getTipo());
+			    users.add(u1);
+			    
+
+			}
+			
+			
+			
+			
+		
+			
+	
 		} catch (IOException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 		
-		ControladorLogin clLog= new ControladorLogin(u1);
+		ControladorLogin clLog= new ControladorLogin(users);
 		
 		
 		EventQueue.invokeLater(new Runnable() {
