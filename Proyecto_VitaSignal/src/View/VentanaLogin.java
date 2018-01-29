@@ -86,6 +86,7 @@ public class VentanaLogin extends JFrame {
 	 * @throws IOException 
 	 */
 	public VentanaLogin(ControladorLogin clLog) throws IOException {
+		this.setTitle("VitaSignal Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
