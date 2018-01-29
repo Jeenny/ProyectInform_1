@@ -39,38 +39,64 @@ public class VentanaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel contentPane_1;
+	
+	
+
 	private ControladorLogin cntrl;
 
+	public ControladorLogin getCntrl() {
+		return cntrl;
+	}
+
+
+	public void setCntrl(ControladorLogin cntrl) {
+		this.cntrl = cntrl;
+	}
+
+
 	private JTextField textField;
+	public JTextField getTextField() {
+		return textField;
+	}
+
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+
+	public JPasswordField getPasswordField() {
+		return passwordField;
+	}
+
+
+	public void setPasswordField(JPasswordField passwordField) {
+		this.passwordField = passwordField;
+	}
+
 	private JPasswordField passwordField;
 
 	
 	Color degradado = new Color(133,155,196);
-	
-
-
 
 
 	/**
 	 * Create the frame.
+	 * @param clLog 
 	 * @throws IOException 
 	 */
-	public VentanaLogin() throws IOException {
+	public VentanaLogin(ControladorLogin clLog) throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBounds(415, 190, 530, 370);
 		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(195, 211, 236));
-		cntrl= new ControladorLogin(this);
+		cntrl= clLog;
 		
 		BufferedImage logo =ImageIO.read(new File("src/Images/VitaSignalAzul2.png"));
 		
 	
-		
-		
-		
-
 		setBounds(360, 200, 500, 350);
 		
 		contentPane_1 = new JPanel() {
