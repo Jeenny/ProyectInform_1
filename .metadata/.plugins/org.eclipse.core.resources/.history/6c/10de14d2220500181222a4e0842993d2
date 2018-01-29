@@ -1,0 +1,46 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.JToolBar;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenu;
+import javax.swing.JTable;
+import javax.swing.JMenuItem;
+
+public class VentanaPrincipalMedico extends JFrame{
+	private JTable table;
+	
+	public VentanaPrincipalMedico() {
+		
+		setBounds(360, 200, 500, 314);
+		setLocationRelativeTo(null);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        
+	        
+		SpringLayout springLayout = new SpringLayout();
+		getContentPane().setLayout(springLayout);
+		
+		JButton btnNewButton = new JButton("Nuevo paciente");
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 113, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 49, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -310, SpringLayout.EAST, getContentPane());
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		getContentPane().add(btnNewButton);
+		
+		table = new JTable();
+		springLayout.putConstraint(SpringLayout.NORTH, table, 306, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, table, -183, SpringLayout.EAST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, table, 14, SpringLayout.SOUTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, table, -183, SpringLayout.EAST, getContentPane());
+		getContentPane().add(table);
+	}
+}

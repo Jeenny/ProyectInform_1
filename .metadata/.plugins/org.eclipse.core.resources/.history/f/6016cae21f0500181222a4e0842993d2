@@ -1,0 +1,49 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.JToolBar;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenu;
+
+public class VentanaPrincipalMedico extends JFrame{
+	
+	public VentanaPrincipalMedico() {
+		
+		setBounds(360, 200, 500, 500);
+
+		SpringLayout springLayout = new SpringLayout();
+		getContentPane().setLayout(springLayout);
+		
+		JButton btnNewButton = new JButton("Nuevo paciente");
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 108, SpringLayout.WEST, getContentPane());
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		getContentPane().add(btnNewButton);
+		
+		JMenuBar menuBar = new JMenuBar();
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 83, SpringLayout.SOUTH, menuBar);
+		springLayout.putConstraint(SpringLayout.WEST, menuBar, 0, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, menuBar, 500, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, menuBar, 0, SpringLayout.NORTH, getContentPane());
+		getContentPane().add(menuBar);
+		
+		JMenu mnSesion = new JMenu("Sesion");
+		menuBar.add(mnSesion);
+		
+		JMenu mnNewMenu = new JMenu("Cerrar Sesión");
+		mnSesion.add(mnNewMenu);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton_1, 31, SpringLayout.SOUTH, btnNewButton);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_1, 96, SpringLayout.WEST, getContentPane());
+		getContentPane().add(btnNewButton_1);
+	}
+}

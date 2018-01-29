@@ -1,0 +1,15 @@
+package View;
+
+import javax.swing.JFrame;
+
+
+public class VentanaPrincipalMedico extends JFrame{
+	
+	public VentanaPrincipalMedico() {
+		
+		setBounds(360, 200, 500, 314);
+		setLocationRelativeTo(null);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	}
+}

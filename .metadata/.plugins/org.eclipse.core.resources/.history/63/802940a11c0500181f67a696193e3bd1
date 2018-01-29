@@ -1,0 +1,12 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.JToolBar;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+
+public class VentanaPrincipalMedico extends JFrame{
+}

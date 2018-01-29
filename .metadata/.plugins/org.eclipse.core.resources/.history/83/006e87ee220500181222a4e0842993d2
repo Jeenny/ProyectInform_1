@@ -1,0 +1,29 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.JToolBar;
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
+import java.awt.GridLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenu;
+import javax.swing.JTable;
+import javax.swing.JMenuItem;
+
+public class VentanaPrincipalMedico extends JFrame{
+	private JTable table;
+	
+	public VentanaPrincipalMedico() {
+		
+		setBounds(360, 200, 500, 314);
+		setLocationRelativeTo(null);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		table = new JTable();
+		getContentPane().add(table);
+	}
+}
