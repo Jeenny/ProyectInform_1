@@ -1,3 +1,4 @@
+package Control;
 import java.awt.EventQueue;
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,12 +9,11 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Control.ControladorLogin;
 import Model.Usuario;
 import View.VentanaLogin;
 import View.VentanaPrincipalMedico;
 
-public class main {
+public class MainController {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -68,8 +68,8 @@ public class main {
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 					
-					VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
-					VPMedico.setVisible(true);
+//					VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
+//					VPMedico.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

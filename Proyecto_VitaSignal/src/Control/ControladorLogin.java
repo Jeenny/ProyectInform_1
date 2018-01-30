@@ -15,6 +15,7 @@ import View.VentanaPrincipalMedico;
 public class ControladorLogin implements ActionListener, KeyListener {
 
 	VentanaLogin v1;
+	VentanaPrincipalMedico venMed;
 	public VentanaLogin getV1() {
 		return v1;
 	}
@@ -48,15 +49,19 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
-					
-					JOptionPane.showMessageDialog(v1, "Bienvenido usuario "+users.get(cont).getTipo());
+					v1.setVisible(false);
 					logueado=true;
+					venMed=new VentanaPrincipalMedico();
+					ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
+					cntrlMed.setCntrlLogin(this);
+					
+					
+					
+					venMed.setVisible(true);
+					
 					}
-				cont++;
-				
-			}
-				
-			
+				cont++;		
+			}		
 		}
 		}
 		
@@ -76,9 +81,12 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
-					
-					JOptionPane.showMessageDialog(v1, "Bienvenido usuario "+users.get(cont).getTipo());
+					v1.setVisible(false);
 					logueado=true;
+					venMed=new VentanaPrincipalMedico();
+					ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
+					cntrlMed.setCntrlLogin(this);
+					venMed.setVisible(true);
 				
 					}
 				cont++;

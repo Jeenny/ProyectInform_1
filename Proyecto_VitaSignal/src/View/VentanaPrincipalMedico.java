@@ -18,12 +18,21 @@ import javax.swing.Box;
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
 
+import Control.ControladorVentanaPrincipalMedico;
+
 
 public class VentanaPrincipalMedico extends JFrame{
 	
+	ControladorVentanaPrincipalMedico cntrlVenMed;
+
+	public ControladorVentanaPrincipalMedico getCntrlVenMed() {
+		return cntrlVenMed;
+	}
+
 	public VentanaPrincipalMedico() {
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		
+		cntrlVenMed=new ControladorVentanaPrincipalMedico(this);
         //this.setExtendedState(MAXIMIZED_BOTH);
         this.setBounds(200, 200, 500, 500);
 		JMenuBar menuBar = new JMenuBar();
@@ -33,6 +42,7 @@ public class VentanaPrincipalMedico extends JFrame{
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar sesion");
+		mntmCerrarSesion.addActionListener(cntrlVenMed);
 		mnNewMenu.add(mntmCerrarSesion);
 		
 		JMenu mnAdmrPacientes = new JMenu("Admr. Pacientes");
@@ -47,6 +57,7 @@ public class VentanaPrincipalMedico extends JFrame{
 		getContentPane().setLayout(springLayout);
 		
 		JButton btnNuevoPaciente = new JButton("Nuevo paciente");
+		btnNuevoPaciente.addActionListener(cntrlVenMed);
 		springLayout.putConstraint(SpringLayout.NORTH, btnNuevoPaciente, 121, SpringLayout.NORTH, getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, btnNuevoPaciente, 49, SpringLayout.WEST, getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNuevoPaciente, 171, SpringLayout.NORTH, getContentPane());
@@ -54,4 +65,6 @@ public class VentanaPrincipalMedico extends JFrame{
 		getContentPane().add(btnNuevoPaciente);
 	
 	}
+
+	
 }
