@@ -47,20 +47,33 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(cont);
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
+			
+				
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
 					
 					JOptionPane.showMessageDialog(v1, "Bienvenido usuario "+users.get(cont).getTipo());
 					logueado=true;
+				
+					String tipo = users.get(cont).getTipo();
+					System.out.println(tipo);
+					
+					if ( tipo.equals("medico")) {
+						VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
+						VPMedico.setVisible(true);
+					}
+
+					
 					}
 				cont++;
 				
 			}
 				
 			
-		}
+			}
 		}
 		
 	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -75,16 +88,25 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(cont);
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
+			
+				
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
 					
 					JOptionPane.showMessageDialog(v1, "Bienvenido usuario "+users.get(cont).getTipo());
 					logueado=true;
 				
+					String tipo = users.get(cont).getTipo();
+					System.out.println(tipo);
+					
+					if ( tipo.equals("medico")) {
+						VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
+						VPMedico.setVisible(true);
+					}
+				
 					}
 				cont++;
 				
 			}
-			
 			
 		
 		}
