@@ -17,7 +17,7 @@ public class Encriptado {
 		
 	}
 	/**
-	 * Esta funcion encripta un Strin a MD5
+	 * Esta funcion encripta un String a MD5
 	 * @author 
 	 * @version 1.0
 	 * @param entrada String que quieres encriptar
@@ -43,11 +43,11 @@ public class Encriptado {
 		 }
 		 }
 	/**
-	 * Esta funcion encripta la entrada con una codificacion SHA-256
+	 * Esta funcion encripta la entrada (un string) con una codificacion SHA-256
 	 * @version 1.0
 	 * @author Miguel Chacon Carrasco
 	 * @param entrada es el String que deseamos encriptar
-	 * @return
+	 * @return sb.toString() si todo sale bien, debuelve la entrada encriptada
 	 */
 	public  String cifradoSHA256(String entrada) {
 		try {
@@ -65,5 +65,58 @@ public class Encriptado {
 			 return error;
 		}
 	}
+	/**
+	 * Este cifrado es una encriptacion por desplazamiento. Solo encripta lentras en las que no se incluye la Ñ
+	 * @param texto
+	 * @param codigo
+	 * @return
+	 */
+	public String cifradoCesar(String texto, int codigo) {
+        StringBuilder cifrado = new StringBuilder();
+        codigo = codigo % 26;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) >= 'a' && texto.charAt(i) <= 'z') {
+                if ((texto.charAt(i) + codigo) > 'z') {
+                    cifrado.append((char) (texto.charAt(i) + codigo - 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) + codigo));
+                }
+            } else if (texto.charAt(i) >= 'A' && texto.charAt(i) <= 'Z') {
+                if ((texto.charAt(i) + codigo) > 'Z') {
+                    cifrado.append((char) (texto.charAt(i) + codigo - 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) + codigo));
+                }
+            }
+        }
+        return cifrado.toString();
+    }
+/**
+ * 
+ * @param texto
+ * @param codigo
+ * @return
+ */
+    public String descifradoCesar(String texto, int codigo) {
+        StringBuilder cifrado = new StringBuilder();
+        codigo = codigo % 26;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) >= 'a' && texto.charAt(i) <= 'z') {
+                if ((texto.charAt(i) - codigo) < 'a') {
+                    cifrado.append((char) (texto.charAt(i) - codigo + 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) - codigo));
+                }
+            } else if (texto.charAt(i) >= 'A' && texto.charAt(i) <= 'Z') {
+                if ((texto.charAt(i) - codigo) < 'A') {
+                    cifrado.append((char) (texto.charAt(i) - codigo + 26));
+                } else {
+                    cifrado.append((char) (texto.charAt(i) - codigo));
+                }
+            }
+        }
+        return cifrado.toString();
+    }
+	
 
 }
