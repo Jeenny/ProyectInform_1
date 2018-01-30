@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import Model.Usuario;
 import View.VentanaLogin;
+import View.VentanaPrincipalMedico;
 
 public class ControladorLogin implements ActionListener, KeyListener {
 
@@ -78,11 +79,17 @@ public class ControladorLogin implements ActionListener, KeyListener {
 					
 					JOptionPane.showMessageDialog(v1, "Bienvenido usuario "+users.get(cont).getTipo());
 					logueado=true;
+				
 					}
 				cont++;
 				
 			}
+			
+			
+		
 		}
+		
+		
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
