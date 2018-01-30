@@ -1,0 +1,67 @@
+package View;
+
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JButton;
+import javax.swing.JMenuBar;
+import javax.swing.JTable;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
+import javax.swing.JMenu;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.JMenuItem;
+import javax.swing.SpringLayout;
+
+
+public class VentanaPrincipalMedico extends JFrame{
+	
+	public VentanaPrincipalMedico() {
+		
+		
+        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setBounds(200, 200, 500, 500);
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Sesion");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar sesion");
+		mnNewMenu.add(mntmCerrarSesion);
+		
+		JMenu mnAdmrPacientes = new JMenu("Admr. Pacientes");
+		menuBar.add(mnAdmrPacientes);
+		
+		JMenuItem mntmVerPacientes = new JMenuItem("Ver pacientes");
+		mnAdmrPacientes.add(mntmVerPacientes);
+		
+		JMenu mnAyuda = new JMenu("Ayuda");
+		menuBar.add(mnAyuda);
+		SpringLayout springLayout = new SpringLayout();
+		getContentPane().setLayout(springLayout);
+		
+		JPanel panel = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 129, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 10, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, 249, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, 208, SpringLayout.WEST, getContentPane());
+		getContentPane().add(panel);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		JButton btnNewButton = new JButton("Nuevo Paciente");
+		panel.add(btnNewButton, BorderLayout.CENTER);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 10, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, -8, SpringLayout.NORTH, panel);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+	
+	}
+}

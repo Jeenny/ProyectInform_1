@@ -89,10 +89,7 @@ public class VentanaLogin extends JFrame {
 		this.setTitle("VitaSignal Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-	    int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
-	    
-	    this.setBounds((ancho / 2) - (this.getWidth()/2), (alto / 2) - (this.getHeight() / 2), 530, 370);
+
 		
 	    //setBounds(415, 190, 530, 370);
 		setResizable(false);

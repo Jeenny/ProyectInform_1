@@ -48,24 +48,40 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(cont);
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
+			
+				
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
 					v1.setVisible(false);
 					logueado=true;
-					venMed=new VentanaPrincipalMedico();
-					ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
-					cntrlMed.setCntrlLogin(this);
-					
+
+					if ( users.get(cont).getTipo().equals("medico")) {
+						venMed=new VentanaPrincipalMedico();
+						ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
+						cntrlMed.setCntrlLogin(this);
+					}
 					
 					
 					venMed.setVisible(true);
 					
 					}
 				cont++;		
-			}		
+				
+				
+			}
+			
+			break;
+			
 		}
-		}
-		
-	}
+					
+				
+				
+			}
+				
+			
+			}
+
+	
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -80,19 +96,25 @@ public class ControladorLogin implements ActionListener, KeyListener {
 				System.out.println(cont);
 				System.out.println(users.get(cont).getUsuario());
 				System.out.println(users.get(cont).getPassword());
+			
+				
 				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
 					v1.setVisible(false);
 					logueado=true;
-					venMed=new VentanaPrincipalMedico();
-					ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
-					cntrlMed.setCntrlLogin(this);
-					venMed.setVisible(true);
+					
+				
+					if ( users.get(cont).getTipo().equals("medico")) {
+						venMed=new VentanaPrincipalMedico();
+						ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
+						cntrlMed.setCntrlLogin(this);
+						venMed.setVisible(true);
+					}
+					
 				
 					}
 				cont++;
 				
 			}
-			
 			
 		
 		}

@@ -68,8 +68,7 @@ public class MainController {
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 					
-//					VentanaPrincipalMedico VPMedico = new VentanaPrincipalMedico();
-//					VPMedico.setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
