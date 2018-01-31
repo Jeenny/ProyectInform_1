@@ -1,20 +1,11 @@
 package View;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
-import javax.swing.JTable;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.GridLayout;
-import javax.swing.JPanel;
+
 import javax.swing.JMenu;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Component;
-import javax.swing.Box;
+
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
 import java.awt.Frame;
@@ -25,24 +16,29 @@ import Control.ControladorVentanaPrincipalMedico;
 public class VentanaPrincipalMedico extends JFrame{
 	
 	ControladorVentanaPrincipalMedico cntrlVenMed;
-
+	
+	/**
+	 * Permite acceder controlador de la ventana medico
+	 * @return controladorVentanaPrincipalMedico
+	 */
+	
 	public ControladorVentanaPrincipalMedico getCntrlVenMed() {
 		return cntrlVenMed;
 	}
+	
+	/**
+	 * Se crea la ventana y los elementos de la ventana
+	 */
 
 	public VentanaPrincipalMedico() {
 		this.setTitle("Ventana Principal Medico");
 
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
 
 		cntrlVenMed=new ControladorVentanaPrincipalMedico(this);
-        //this.setExtendedState(MAXIMIZED_BOTH);
-
 		
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
 
-        this.setBounds(200, 200, 500, 500);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -63,10 +59,7 @@ public class VentanaPrincipalMedico extends JFrame{
 		menuBar.add(mnAyuda);
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
-		
-
 	
-		
 		
 		JButton btnNuevoPaciente = new JButton("Nuevo Paciente");
 		btnNuevoPaciente.addActionListener(cntrlVenMed);

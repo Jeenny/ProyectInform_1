@@ -6,7 +6,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
 
-import Control.ControladorVentanaPrincipalMedico;
 import Control.ControladorVentanaPrincipalTecnico;
 
 import java.awt.Frame;
@@ -15,18 +14,25 @@ import javax.swing.JButton;
 
 public class VentanaPrincipalTecnico extends JFrame{
 	
-	
 	ControladorVentanaPrincipalTecnico cntrlVenTec;
-
+	
+	/**
+	 * Permite acceder controlador de la ventana tecnico
+	 * @return controladorVentanaPrincipalTecnico
+	 */
+	
 	public ControladorVentanaPrincipalTecnico getCntrlVenTec() {
 		return cntrlVenTec;
 	}
 	
 	
+	/**
+	 * Se crea la ventana y los elementos de la ventana
+	 */
+	
 	public VentanaPrincipalTecnico() {
 		
 		this.setTitle("Ventana Principal Tecnico");
-
 		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -34,7 +40,6 @@ public class VentanaPrincipalTecnico extends JFrame{
         
 		cntrlVenTec=new ControladorVentanaPrincipalTecnico(this);
 
-		this.setBounds(200, 200, 500, 500);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -56,18 +61,15 @@ public class VentanaPrincipalTecnico extends JFrame{
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
 		
-
 	
-		
-		
-		JButton btnNuevoPaciente = new JButton("Añadir ECG");
-		btnNuevoPaciente.addActionListener(cntrlVenTec);
-		springLayout.putConstraint(SpringLayout.NORTH, btnNuevoPaciente, 177, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, btnNuevoPaciente, 41, SpringLayout.WEST, getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNuevoPaciente, 234, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, btnNuevoPaciente, 203, SpringLayout.WEST, getContentPane());
+		JButton btnAñadirEcg = new JButton("Añadir ECG");
+		btnAñadirEcg.addActionListener(cntrlVenTec);
+		springLayout.putConstraint(SpringLayout.NORTH, btnAñadirEcg, 177, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, btnAñadirEcg, 41, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnAñadirEcg, 234, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, btnAñadirEcg, 203, SpringLayout.WEST, getContentPane());
 
-		getContentPane().add(btnNuevoPaciente);
+		getContentPane().add(btnAñadirEcg);
 	
 	}
 }

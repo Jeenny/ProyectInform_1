@@ -16,18 +16,24 @@ import View.VentanaPrincipalTecnico;
 
 public class ControladorLogin implements ActionListener, KeyListener {
 
-	VentanaLogin v1;
-	VentanaPrincipalMedico venMed;
-	VentanaPrincipalTecnico venTec;
-	VentanaPrincipalAdministrador venAdmin;
+	private VentanaLogin venLogin;
+	private VentanaPrincipalMedico venMed;
+	private VentanaPrincipalTecnico venTec;
+	private VentanaPrincipalAdministrador venAdmin;
 
+	/**
+	 * Permite acceder a la ventana login
+	 * @return ventanaLogin
+	 */
 	
 	public VentanaLogin getV1() {
-		return v1;
+		return venLogin;
 	}
 	public void setV1(VentanaLogin v1) {
-		this.v1 = v1;
+		this.venLogin = v1;
 	}
+	
+	
 	ArrayList<Usuario> users;
 	
 	public ControladorLogin(ArrayList<Usuario> users) {
@@ -35,29 +41,35 @@ public class ControladorLogin implements ActionListener, KeyListener {
 		this.users = users;
 	}
 	
-	public ControladorLogin(VentanaLogin v1) {
+	/**
+	 * Asigna la ventana
+	 * @param venLogin ventana Login
+	 */
+	
+	public ControladorLogin(VentanaLogin venLogin) {
 		super();
-		this.v1 = v1;
+		this.venLogin = venLogin;
 	}
 	
+	/**
+	 * Controla lo que ocurre al pulsar el boton "Entrar"
+	 */
+	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		switch(arg0.getActionCommand()) {
+	public void actionPerformed(ActionEvent evento) {
+		
+		switch(evento.getActionCommand()) {
+		
 		case "Entrar":{
-			char[] charPass=v1.getPasswordField().getPassword();
-			String pass=String.valueOf(charPass);
+			char[] charPass = venLogin.getPasswordField().getPassword();
+			String pass = String.valueOf(charPass);
 			boolean logueado = false;
 			int cont= 0;
-			
 
-			while(!logueado&&cont<users.size()) {
-				System.out.println(cont);
-				System.out.println(users.get(cont).getUsuario());
-				System.out.println(users.get(cont).getPassword());
-			
+			while(!logueado && cont<users.size()) {
 				
-				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
-					v1.setVisible(false);
+				if(users.get(cont).getUsuario().equals(venLogin.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
+					venLogin.setVisible(false);
 					logueado=true;
 
 					if ( users.get(cont).getTipo().equals("medico")) {
@@ -80,50 +92,43 @@ public class ControladorLogin implements ActionListener, KeyListener {
 						cntrlAdmin.setCntrlLogin(this);
 						venAdmin.setVisible(true);
 					}
-					
-
-					
-					}
+							
+				}
 				cont++;		
 				
 			}
-			if ( logueado != true) 
+			
+			if ( logueado != true) {
 				 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-
+			}
 			
 			break;
 			
-			
-			
+			}
+						
 		}
-					
-				
-				
-			}
-				
 			
-			}
+	}
 
 	
+	/**
+	 * Controla lo que ocurre al pulsar la tecla "Enter"
+	 */
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getKeyCode()==10) {
-			char[] charPass=v1.getPasswordField().getPassword();
-			String pass=String.valueOf(charPass);
-			boolean logueado = false;
-			int cont= 0;
-			
 
-			while(!logueado&&cont<users.size()) {
-				System.out.println(cont);
-				System.out.println(users.get(cont).getUsuario());
-				System.out.println(users.get(cont).getPassword());
+		if(e.getKeyCode()==10) {
 			
+			char[] charPass = venLogin.getPasswordField().getPassword();
+			String pass = String.valueOf(charPass);
+			boolean logueado = false;
+			int cont = 0;
+			
+			while(!logueado && cont<users.size()) {			
 				
-				if(users.get(cont).getUsuario().equals(v1.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
-					v1.setVisible(false);
+				if(users.get(cont).getUsuario().equals(venLogin.getTextField().getText())&&users.get(cont).getPassword().equals(pass)){
+					venLogin.setVisible(false);
 					logueado=true;
 					
 				
@@ -148,18 +153,18 @@ public class ControladorLogin implements ActionListener, KeyListener {
 						venAdmin.setVisible(true);
 					}
 				
-					}
+				}
 				cont++;
 				
 			}
 			
-			if ( logueado != true) 
+			if ( logueado != true) {
 				 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-
+			}
 		}
 		
-		
 	}
+	
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub

@@ -9,52 +9,57 @@ import View.VentanaPrincipalMedico;
 
 public class ControladorVentanaPrincipalMedico implements ActionListener {
 
-	VentanaPrincipalMedico view;
+	private VentanaPrincipalMedico view;
+	private VentanaLogin vntLogin;
+	private ControladorLogin cntrlLogin;
 	
-	VentanaLogin vntLogin;
-	
-	ControladorLogin cntrlLogin;
-	
+	/**
+	 * Permite acceder controlador login
+	 * @return controladorLogin
+	 */
 	
 	public ControladorLogin getCntrlLogin() {
 		return cntrlLogin;
 	}
 
-
-
 	public void setCntrlLogin(ControladorLogin cntrlLogin) {
 		this.cntrlLogin = cntrlLogin;
 	}
 
-
+	/**
+	 * Asigna la ventana
+	 * @param view la ventana principal medico
+	 */
 
 	public ControladorVentanaPrincipalMedico(VentanaPrincipalMedico view) {
 		super();
 		this.view = view;
 	}
 
-
+	/**
+	 * Controla lo que ocurre al pulsar "Cerrar sesion"
+	 */
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent evento) {
 		
-		switch(arg0.getActionCommand()){
+		switch(evento.getActionCommand()){
+		
 		case "Cerrar sesion":{
 			try {
 				cntrlLogin=view.getCntrlVenMed().cntrlLogin;
 				vntLogin = new VentanaLogin(cntrlLogin);
 				cntrlLogin.setV1(vntLogin);
+				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			vntLogin.setVisible(true);
 			view.dispose();
 			break;
 		}
-			
-			
+				
 		}
 		
 		

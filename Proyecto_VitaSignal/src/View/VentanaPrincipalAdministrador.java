@@ -1,5 +1,6 @@
 package View;
 
+import java.awt.Color;
 import java.awt.Frame;
 
 import javax.swing.JButton;
@@ -10,28 +11,37 @@ import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
 
 import Control.ControladorVentanaPrincipalAdministrador;
-import Control.ControladorVentanaPrincipalTecnico;
+
 
 public class VentanaPrincipalAdministrador extends JFrame {
 
 	ControladorVentanaPrincipalAdministrador cntrlVenAdmin;
-
+	
+	/**
+	 * Permite acceder controlador de la ventana administrador
+	 * @return controladorVentanaPrincipalAdministrador
+	 */
+	
 	public ControladorVentanaPrincipalAdministrador getCntrlVenAdmin() {
 		return cntrlVenAdmin;
 	}
 	
+
+	
+	/**
+	 * Se crea la ventana y los elementos de la ventana
+	 */
 	
 	public VentanaPrincipalAdministrador() {
+		
 		this.setTitle("Ventana Principal Administrador");
 
-		
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
         
 		cntrlVenAdmin = new ControladorVentanaPrincipalAdministrador(this);
 
-		this.setBounds(200, 200, 500, 500);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -54,9 +64,6 @@ public class VentanaPrincipalAdministrador extends JFrame {
 		getContentPane().setLayout(springLayout);
 		
 
-	
-		
-		
 		JButton btnNuevoTecnico = new JButton("Nuevo Tecnico");
 		btnNuevoTecnico.addActionListener(cntrlVenAdmin);
 		springLayout.putConstraint(SpringLayout.NORTH, btnNuevoTecnico, 177, SpringLayout.NORTH, getContentPane());
