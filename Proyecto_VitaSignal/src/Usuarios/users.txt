@@ -1,5 +1,6 @@
 miguel;123a;medico
 jenny;234;tecnico
+adrian;345;admin
 SergioBemposta;s#B3mp0sta@uem.es;medico
 MariLuzMorales;m1#M0ra13s@uem.es;medico
 BorjaRodriguez;b#R0dr1gu3z@uem.es;medico

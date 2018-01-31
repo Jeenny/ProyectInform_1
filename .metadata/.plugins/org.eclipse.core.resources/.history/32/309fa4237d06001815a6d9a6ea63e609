@@ -1,0 +1,27 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.SpringLayout;
+
+import Control.ControladorVentanaPrincipalMedico;
+
+import java.awt.Frame;
+
+import javax.swing.JButton;
+
+public class VentanaPrincipalTecnico extends JFrame{
+	public VentanaPrincipalTecnico() {
+		
+        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        
+		cntrlVenTec=new ControladorVentanaPrincipalMedico(this);
+
+		SpringLayout springLayout = new SpringLayout();
+		getContentPane().setLayout(springLayout);
+		
+		JButton btnAadirEcg = new JButton("Añadir ECG");
+		springLayout.putConstraint(SpringLayout.WEST, btnAadirEcg, 43, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnAadirEcg, -121, SpringLayout.SOUTH, getContentPane());
+		getContentPane().add(btnAadirEcg);
+	}
+}

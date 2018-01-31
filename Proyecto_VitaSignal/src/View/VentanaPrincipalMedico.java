@@ -31,6 +31,8 @@ public class VentanaPrincipalMedico extends JFrame{
 	}
 
 	public VentanaPrincipalMedico() {
+		this.setTitle("Ventana Principal Medico");
+
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 

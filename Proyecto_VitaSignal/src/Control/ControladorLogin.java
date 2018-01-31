@@ -10,12 +10,18 @@ import javax.swing.JOptionPane;
 
 import Model.Usuario;
 import View.VentanaLogin;
+import View.VentanaPrincipalAdministrador;
 import View.VentanaPrincipalMedico;
+import View.VentanaPrincipalTecnico;
 
 public class ControladorLogin implements ActionListener, KeyListener {
 
 	VentanaLogin v1;
 	VentanaPrincipalMedico venMed;
+	VentanaPrincipalTecnico venTec;
+	VentanaPrincipalAdministrador venAdmin;
+
+	
 	public VentanaLogin getV1() {
 		return v1;
 	}
@@ -58,18 +64,36 @@ public class ControladorLogin implements ActionListener, KeyListener {
 						venMed=new VentanaPrincipalMedico();
 						ControladorVentanaPrincipalMedico cntrlMed = venMed.getCntrlVenMed();
 						cntrlMed.setCntrlLogin(this);
+						venMed.setVisible(true);
 					}
 					
+					if ( users.get(cont).getTipo().equals("tecnico")) {
+						venTec =new VentanaPrincipalTecnico();
+						ControladorVentanaPrincipalTecnico cntrlTec = venTec.getCntrlVenTec();
+						cntrlTec.setCntrlLogin(this);
+						venTec.setVisible(true);
+					}
 					
-					venMed.setVisible(true);
+					if ( users.get(cont).getTipo().equals("admin")) {
+						venAdmin =new VentanaPrincipalAdministrador();
+						ControladorVentanaPrincipalAdministrador cntrlAdmin = venAdmin.getCntrlVenAdmin();
+						cntrlAdmin.setCntrlLogin(this);
+						venAdmin.setVisible(true);
+					}
+					
+
 					
 					}
 				cont++;		
 				
-				
 			}
+			if ( logueado != true) 
+				 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+
 			
 			break;
+			
+			
 			
 		}
 					
@@ -110,13 +134,28 @@ public class ControladorLogin implements ActionListener, KeyListener {
 						venMed.setVisible(true);
 					}
 					
+					if ( users.get(cont).getTipo().equals("tecnico")) {
+						venTec =new VentanaPrincipalTecnico();
+						ControladorVentanaPrincipalTecnico cntrlTec = venTec.getCntrlVenTec();
+						cntrlTec.setCntrlLogin(this);
+						venTec.setVisible(true);
+					}
+					
+					if ( users.get(cont).getTipo().equals("admin")) {
+						venAdmin =new VentanaPrincipalAdministrador();
+						ControladorVentanaPrincipalAdministrador cntrlAdmin = venAdmin.getCntrlVenAdmin();
+						cntrlAdmin.setCntrlLogin(this);
+						venAdmin.setVisible(true);
+					}
 				
 					}
 				cont++;
 				
 			}
 			
-		
+			if ( logueado != true) 
+				 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+
 		}
 		
 		
