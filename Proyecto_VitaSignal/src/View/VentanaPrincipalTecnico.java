@@ -1,17 +1,20 @@
 package View;
-
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
-
 import Control.ControladorVentanaPrincipalTecnico;
-
 import java.awt.Frame;
-
 import javax.swing.JButton;
-
+/**
+ * Genera la ventana de tecnico
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ * @version 0.5
+ *
+ */
 public class VentanaPrincipalTecnico extends JFrame{
 	
 	ControladorVentanaPrincipalTecnico cntrlVenTec;
@@ -24,10 +27,9 @@ public class VentanaPrincipalTecnico extends JFrame{
 	public ControladorVentanaPrincipalTecnico getCntrlVenTec() {
 		return cntrlVenTec;
 	}
-	
-	
 	/**
-	 * Se crea la ventana y los elementos de la ventana
+	 * Se crea todos los elementos de la ventana junto a la misma
+	 * @version 0.5
 	 */
 	
 	public VentanaPrincipalTecnico() {

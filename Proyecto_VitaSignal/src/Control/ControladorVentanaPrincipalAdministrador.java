@@ -7,7 +7,13 @@ import java.io.IOException;
 import View.VentanaLogin;
 import View.VentanaPrincipalAdministrador;
 import View.VentanaPrincipalTecnico;
-
+/**
+ * 
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ *
+ */
 public class ControladorVentanaPrincipalAdministrador implements ActionListener{
 	
 	private VentanaPrincipalAdministrador view;
@@ -22,7 +28,10 @@ public class ControladorVentanaPrincipalAdministrador implements ActionListener{
 	public ControladorLogin getCntrlLogin() {
 		return cntrlLogin;
 	}
-
+	/**
+	 * Asigna el controlador de login
+	 * @param cntrlLogin
+	 */
 	public void setCntrlLogin(ControladorLogin cntrlLogin) {
 		this.cntrlLogin = cntrlLogin;
 	}
@@ -38,7 +47,7 @@ public class ControladorVentanaPrincipalAdministrador implements ActionListener{
 	}
 
 	/**
-	 * Controla lo que ocurre al pulsar "Cerrar sesion"
+	 * Controla lo que ocurre al pulsar "Cerrar sesion". Hace visible la ventana de log in
 	 */
 
 	public void actionPerformed(ActionEvent evento) {

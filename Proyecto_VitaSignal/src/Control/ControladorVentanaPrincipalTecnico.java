@@ -5,9 +5,15 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import View.VentanaLogin;
-import View.VentanaPrincipalMedico;
 import View.VentanaPrincipalTecnico;
-
+/**
+ * Este es el controlador de la ventana principal del Tecnico
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ * @version 0.5
+ *
+ */
 public class ControladorVentanaPrincipalTecnico implements ActionListener{
 
 	private VentanaPrincipalTecnico view;
@@ -15,7 +21,8 @@ public class ControladorVentanaPrincipalTecnico implements ActionListener{
 	private ControladorLogin cntrlLogin;
 	
 	/**
-	 * Permite acceder controlador login
+	 * Permite acceder controlador de la ventana de login
+	 * @version 1.0
 	 * @return controladorLogin
 	 */
 	
@@ -29,7 +36,7 @@ public class ControladorVentanaPrincipalTecnico implements ActionListener{
 
 
 	/**
-	 * Asigna la ventana
+	 * Asigna la ventana al controlador
 	 * @param view la ventana principal tecnico
 	 */
 	
@@ -39,7 +46,8 @@ public class ControladorVentanaPrincipalTecnico implements ActionListener{
 	}
 
 	/**
-	 * Controla lo que ocurre al pulsar "Cerrar sesion"
+	 * Controla lo que ocurre al pulsar "Cerrar sesion". En ese momento se hace visible la ventana de log in.
+	 * @version 0.8
 	 */
 
 	public void actionPerformed(ActionEvent evento) {

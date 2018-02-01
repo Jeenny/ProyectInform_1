@@ -1,11 +1,11 @@
 package Model;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
 /**
  * Clase dedicada a la encriptacion de datos
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
  * @author Miguel Chacon Carrasco
  * @version 1.0
  */
@@ -92,7 +92,7 @@ public class Encriptado {
         return cifrado.toString();
     }
 /**
- * 
+ * Descifrado tipo cesar. Descifra una encriptacion por desplazamiento
  * @param texto
  * @param codigo
  * @return
@@ -117,6 +117,4 @@ public class Encriptado {
         }
         return cifrado.toString();
     }
-	
-
 }

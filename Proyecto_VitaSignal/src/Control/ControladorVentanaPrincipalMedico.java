@@ -6,7 +6,14 @@ import java.io.IOException;
 
 import View.VentanaLogin;
 import View.VentanaPrincipalMedico;
-
+/**
+ * El controlador de la ventana principal de medico
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ * @version 1.0
+ *
+ */
 public class ControladorVentanaPrincipalMedico implements ActionListener {
 
 	private VentanaPrincipalMedico view;
@@ -21,13 +28,16 @@ public class ControladorVentanaPrincipalMedico implements ActionListener {
 	public ControladorLogin getCntrlLogin() {
 		return cntrlLogin;
 	}
-
+	/**
+	 * Asigna el controlador de login
+	 * @param cntrlLogin
+	 */
 	public void setCntrlLogin(ControladorLogin cntrlLogin) {
 		this.cntrlLogin = cntrlLogin;
 	}
 
 	/**
-	 * Asigna la ventana
+	 * Asigna la ventana de medico
 	 * @param view la ventana principal medico
 	 */
 
@@ -37,7 +47,8 @@ public class ControladorVentanaPrincipalMedico implements ActionListener {
 	}
 
 	/**
-	 * Controla lo que ocurre al pulsar "Cerrar sesion"
+	 * Controla lo que ocurre al pulsar "Cerrar sesion". Hace visible la ventana log in.
+	 * @version 1.0
 	 */
 
 	@Override

@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import Model.Encriptado;
 /**
  * Clase para el tratamiento de los ficheros
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
  * @author Miguel Chacon Carrasco
  * @version 0.5
  */
@@ -20,8 +23,8 @@ public class Fichero {
 		nombreFichero=fichero;
 	}
 	/**
-	 * Funcion que compara los usuarios y contrase�as de un txt con los que se le mandan.
-	 * He supuesto que se nos dan usuarios seguidos de su contrase�a en diferentes lineas y ambos separadas por punto y coma (;)
+	 * Funcion que compara los usuarios y password de un txt con los que se le mandan.
+	 * He supuesto que se nos dan usuarios seguidos de su password en diferentes lineas y ambos separadas por punto y coma (;)
 	 * Si no es asi, se puede cambiar
 	 * @author Miguel Chacon
 	 * @return comparacion es falso si no encuentra una coincidencia simultanea en usuario y contrase�a
@@ -64,8 +67,8 @@ public String tipoUsuario (String usuario) throws FileNotFoundException, IOExcep
 	 String linea;
 	 try{
 	 BufferedReader lector=new BufferedReader(new FileReader(ficheroUsuario));
-	 while((linea=lector.readLine())!=null && busqueda){	//inicia b�squeda del usuario linea a linea
-			String[] lineatxt=linea.split(";");	//establece como salto de par�metro el ; esto se puede cambiar
+	 while((linea=lector.readLine())!=null && busqueda){	//inicia busqueda del usuario linea a linea
+			String[] lineatxt=linea.split(";");	//establece como salto de parametro el ; esto se puede cambiar
 			if(lineatxt[0].equals(usuario)){
 				tipousuario=lineatxt[2];
 			}
@@ -80,5 +83,41 @@ public String tipoUsuario (String usuario) throws FileNotFoundException, IOExcep
 	 } 
 	
 	return tipousuario;
+}
+/**
+ * Funcion de busqueda de un usuario y comparacion de su password, ambos encriptados en MD5
+ * @param Usuario
+ * @param contrasena
+ * @return comparacion
+ * @version 0.5
+ */
+public boolean comprobarUsuarioEncriptado(String Usuario, String contrasena) {
+	boolean comprobacion=false;
+	Encriptado e= new Encriptado();
+	String Username=e.cigradoMD5(Usuario);
+	String Password=e.cigradoMD5(contrasena);
+	try {
+		comprobacion=comprobarUsuario(Username,Password);
+	} catch (FileNotFoundException e1) {
+		e1.printStackTrace();
+	} catch (IOException e1) {
+		e1.printStackTrace();
+	}
+	return comprobacion;
+}
+/**
+ * Busca el tipo de usuario en un fichero encriptado en MD5
+ * @param Usuario
+ * @return
+ * @throws FileNotFoundException
+ * @throws IOException
+ * @version 0.5
+ */
+public String tipoUsuarioEncriptado (String Usuario) throws FileNotFoundException, IOException{
+	String tipoUsuario;
+	Encriptado e= new Encriptado();
+	String Username=e.cigradoMD5(Usuario);
+	tipoUsuario=tipoUsuario(Username);
+	return tipoUsuario;
 }
 }

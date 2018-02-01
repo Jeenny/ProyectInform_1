@@ -13,7 +13,13 @@ import View.VentanaLogin;
 import View.VentanaPrincipalAdministrador;
 import View.VentanaPrincipalMedico;
 import View.VentanaPrincipalTecnico;
-
+/**
+ * Controlador de la ventana de log in
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ *
+ */
 public class ControladorLogin implements ActionListener, KeyListener {
 
 	private VentanaLogin venLogin;
@@ -29,13 +35,20 @@ public class ControladorLogin implements ActionListener, KeyListener {
 	public VentanaLogin getV1() {
 		return venLogin;
 	}
+	/**
+	 * 
+	 * @param v1
+	 */
 	public void setV1(VentanaLogin v1) {
 		this.venLogin = v1;
 	}
 	
 	
 	ArrayList<Usuario> users;
-	
+	/**
+	 * 
+	 * @param users
+	 */
 	public ControladorLogin(ArrayList<Usuario> users) {
 		super();
 		this.users = users;

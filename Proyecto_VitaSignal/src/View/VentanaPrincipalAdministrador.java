@@ -11,7 +11,14 @@ import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
 
 import Control.ControladorVentanaPrincipalAdministrador;
-
+/**
+ * Version preeliminar de la ventana del administrador
+ * @author Jennyfer Gonzalez
+ * @author Adrian Garcia
+ * @author Miguel Chacon Carrasco
+ * @version 0.5
+ *
+ */
 
 public class VentanaPrincipalAdministrador extends JFrame {
 
@@ -29,7 +36,8 @@ public class VentanaPrincipalAdministrador extends JFrame {
 
 	
 	/**
-	 * Se crea la ventana y los elementos de la ventana
+	 * Se crea la ventana junto a los elementos de la ventana
+	 * @version 0.5
 	 */
 	
 	public VentanaPrincipalAdministrador() {
