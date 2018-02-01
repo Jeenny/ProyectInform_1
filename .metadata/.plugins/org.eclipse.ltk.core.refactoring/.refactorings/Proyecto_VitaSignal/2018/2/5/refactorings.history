@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;btnAñadirEcg&apos; in &apos;View.VentanaPrincipalTecnico.VentanaPrincipalTecnico()&apos; to &apos;btnAnadirEcg&apos;&#x0A;- Original project: &apos;Proyecto_VitaSignal&apos;&#x0A;- Original element: &apos;View.VentanaPrincipalTecnico.VentanaPrincipalTecnico().btnAñadirEcg&apos;&#x0A;- Renamed element: &apos;btnAñadirEcg&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;btnAñadirEcg&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;View{VentanaPrincipalTecnico.java[VentanaPrincipalTecnico~VentanaPrincipalTecnico@btnAñadirEcg!1556!1604!1564!1575!QJButton;!0!false" name="btnAnadirEcg" references="true" stamp="1517496912621" version="1.0"/>
+</session>
