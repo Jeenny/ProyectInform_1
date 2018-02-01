@@ -62,14 +62,14 @@ public class VentanaPrincipalTecnico extends JFrame{
 		getContentPane().setLayout(springLayout);
 		
 	
-		JButton btnAnadirEcg = new JButton("Añadir ECG");
-		btnAnadirEcg.addActionListener(cntrlVenTec);
-		springLayout.putConstraint(SpringLayout.NORTH, btnAnadirEcg, 177, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, btnAnadirEcg, 41, SpringLayout.WEST, getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, btnAnadirEcg, 234, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, btnAnadirEcg, 203, SpringLayout.WEST, getContentPane());
+		JButton btnAñadirEcg = new JButton("Añadir ECG");
+		btnAñadirEcg.addActionListener(cntrlVenTec);
+		springLayout.putConstraint(SpringLayout.NORTH, btnAñadirEcg, 177, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, btnAñadirEcg, 41, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnAñadirEcg, 234, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, btnAñadirEcg, 203, SpringLayout.WEST, getContentPane());
 
-		getContentPane().add(btnAnadirEcg);
+		getContentPane().add(btnAñadirEcg);
 	
 	}
 }
