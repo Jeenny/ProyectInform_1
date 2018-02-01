@@ -1,31 +1,44 @@
 package View;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
-import javax.swing.JTable;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.GridLayout;
-import javax.swing.JPanel;
+
 import javax.swing.JMenu;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Component;
-import javax.swing.Box;
+
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
+import java.awt.Frame;
+
+import Control.ControladorVentanaPrincipalMedico;
 
 
 public class VentanaPrincipalMedico extends JFrame{
 	
+	ControladorVentanaPrincipalMedico cntrlVenMed;
+	
+	/**
+	 * Permite acceder controlador de la ventana medico
+	 * @return controladorVentanaPrincipalMedico
+	 */
+	
+	public ControladorVentanaPrincipalMedico getCntrlVenMed() {
+		return cntrlVenMed;
+	}
+	
+	/**
+	 * Se crea la ventana y los elementos de la ventana
+	 */
+
 	public VentanaPrincipalMedico() {
+		this.setTitle("Ventana Principal Medico");
+
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+		cntrlVenMed=new ControladorVentanaPrincipalMedico(this);
 		
-		
-        //this.setExtendedState(MAXIMIZED_BOTH);
-        this.setBounds(200, 200, 500, 500);
+        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -33,6 +46,7 @@ public class VentanaPrincipalMedico extends JFrame{
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar sesion");
+		mntmCerrarSesion.addActionListener(cntrlVenMed);
 		mnNewMenu.add(mntmCerrarSesion);
 		
 		JMenu mnAdmrPacientes = new JMenu("Admr. Pacientes");
@@ -45,13 +59,18 @@ public class VentanaPrincipalMedico extends JFrame{
 		menuBar.add(mnAyuda);
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
+	
 		
-		JButton btnNuevoPaciente = new JButton("Nuevo paciente");
-		springLayout.putConstraint(SpringLayout.NORTH, btnNuevoPaciente, 121, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, btnNuevoPaciente, 49, SpringLayout.WEST, getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNuevoPaciente, 171, SpringLayout.NORTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, btnNuevoPaciente, 200, SpringLayout.WEST, getContentPane());
+		JButton btnNuevoPaciente = new JButton("Nuevo Paciente");
+		btnNuevoPaciente.addActionListener(cntrlVenMed);
+		springLayout.putConstraint(SpringLayout.NORTH, btnNuevoPaciente, 177, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, btnNuevoPaciente, 41, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNuevoPaciente, 234, SpringLayout.NORTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, btnNuevoPaciente, 203, SpringLayout.WEST, getContentPane());
+
 		getContentPane().add(btnNuevoPaciente);
 	
 	}
+
+	
 }

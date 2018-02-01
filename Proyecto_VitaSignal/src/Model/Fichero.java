@@ -20,11 +20,11 @@ public class Fichero {
 		nombreFichero=fichero;
 	}
 	/**
-	 * Funcion que compara los usuarios y contraseñas de un txt con los que se le mandan.
-	 * He supuesto que se nos dan usuarios seguidos de su contraseña en diferentes lineas y ambos separadas por punto y coma (;)
+	 * Funcion que compara los usuarios y contraseï¿½as de un txt con los que se le mandan.
+	 * He supuesto que se nos dan usuarios seguidos de su contraseï¿½a en diferentes lineas y ambos separadas por punto y coma (;)
 	 * Si no es asi, se puede cambiar
 	 * @author Miguel Chacon
-	 * @return comparacion es falso si no encuentra una coincidencia simultanea en usuario y contraseña
+	 * @return comparacion es falso si no encuentra una coincidencia simultanea en usuario y contraseï¿½a
 	 */
 public boolean comprobarUsuario(String Usuario, String Password) throws FileNotFoundException, IOException{
 	 boolean comparacion=false;
@@ -32,8 +32,8 @@ public boolean comprobarUsuario(String Usuario, String Password) throws FileNotF
 	 String linea;
 	 try{
 	 BufferedReader lector=new BufferedReader(new FileReader(ficheroUsuario));;
-	 while((linea=lector.readLine())!=null &&(!comparacion)){	//inicia búsqueda del usuario linea a linea
-			String[] lineatxt=linea.split(";");	//establece como salto de parámetro el ; esto se puede cambiar
+	 while((linea=lector.readLine())!=null &&(!comparacion)){	//inicia bï¿½squeda del usuario linea a linea
+			String[] lineatxt=linea.split(";");	//establece como salto de parï¿½metro el ; esto se puede cambiar
 			if(lineatxt[0].equals(Usuario)){
 				if(lineatxt[1].equals(Password)){
 					comparacion=true;
@@ -64,8 +64,8 @@ public String tipoUsuario (String usuario) throws FileNotFoundException, IOExcep
 	 String linea;
 	 try{
 	 BufferedReader lector=new BufferedReader(new FileReader(ficheroUsuario));
-	 while((linea=lector.readLine())!=null && busqueda){	//inicia búsqueda del usuario linea a linea
-			String[] lineatxt=linea.split(";");	//establece como salto de parámetro el ; esto se puede cambiar
+	 while((linea=lector.readLine())!=null && busqueda){	//inicia bï¿½squeda del usuario linea a linea
+			String[] lineatxt=linea.split(";");	//establece como salto de parï¿½metro el ; esto se puede cambiar
 			if(lineatxt[0].equals(usuario)){
 				tipousuario=lineatxt[2];
 			}
